@@ -51,7 +51,6 @@ func main() {
 		deployAndCallVerifierContract()
 	case "verifylocal":
 		verifyLocal()
-	}
 }
 
 func PrintVk() {
@@ -133,6 +132,7 @@ func callVerifierContract(addr string) {
 	err, bPublicWitness, commitmentX, commitmentY := groth16.GetBn254Witness(proof, vk, publicWitness)
 
 	fmt.Printf("bPublicWitness len:%+v\n", len(bPublicWitness))
+	fmt.Printf("bPublicWitness last:%+v\n", bPublicWitness)
 
 	// convert public inputs
 	nbInputs := len(bPublicWitness)
